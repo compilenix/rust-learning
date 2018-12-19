@@ -1,3 +1,5 @@
+mod lib;
+
 use std::mem;
 
 fn main() {
@@ -18,4 +20,6 @@ fn main() {
 
     let f:f32 = 5.5;
     println!("f:f32 \t= {} \tand a size of {} \tbytes", f, mem::size_of_val(&f));
+
+    lib::stack_and_heap();
 }
