@@ -12,6 +12,12 @@ impl std::fmt::Display for Point {
     }
 }
 
+enum Color {
+    Red,
+    Green,
+    Blue
+}
+
 pub fn stack_and_heap() {
     let point = Box::new(Point { x: 0.0, y: 0.0 });
     println!("point reference takes up {} bytes", mem::size_of_val(&point));
@@ -19,4 +25,7 @@ pub fn stack_and_heap() {
 
     println!("point reference has the value {}", point);
     println!("point has the value {}", *point);
+
+    let red = Color::Red;
+    println!("enum value red has {} bytes", mem::size_of_val(&red));
 }
