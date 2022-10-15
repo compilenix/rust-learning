@@ -7,28 +7,36 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug rust_hello",
+            "name": "Debug executable 'rust-learning'",
             "cargo": {
                 "args": [
                     "build",
-                    "--bin=rust_hello"
-                ]
+                    "--bin=rust-learning",
+                    "--package=rust-learning"
+                ],
+                "filter": {
+                    "name": "rust-learning",
+                    "kind": "bin"
+                }
             },
             "args": [],
-            "cwd": "${workspaceFolder}",
-            "terminal": "integrated",
-            "stdio": null
+            "cwd": "${workspaceFolder}"
         },
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug tests in rust_hello",
+            "name": "Debug unit tests in executable 'rust-learning'",
             "cargo": {
                 "args": [
                     "test",
                     "--no-run",
-                    "--bin=rust_hello"
-                ]
+                    "--bin=rust-learning",
+                    "--package=rust-learning"
+                ],
+                "filter": {
+                    "name": "rust-learning",
+                    "kind": "bin"
+                }
             },
             "args": [],
             "cwd": "${workspaceFolder}"
